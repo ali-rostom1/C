@@ -1,21 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int nb;
+    int nb,i;
 
-    printf("Entrez un nombre entier entre 1 et 10 : ");
+    printf("Entrez un nombre : ");
     scanf("%d", &nb);
-
-    if (nb < 1 || nb > 10) {
-        printf("Erreur : le nombre doit etre entre 1 et 10.\n");
-        return 1;
-    }
-
     printf("Valeur en hexadecimal : %X\n", nb);
+    printf("la valeur en binaire: ");
+    for(i=31;i>=0;i--){
+        printf("%d",(nb >> i) & 1);
 
-    const char *binaryRepresentations[11] = {"0", "1", "10", "11", "100", "101", "110", "111", "1000", "1001", "1010"};
-
-    printf("Valeur en binaire : %s\n", binaryRepresentations[nb]);
+    }
 
     return 0;
 }
